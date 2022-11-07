@@ -1,0 +1,51 @@
+/*
+Theme Name: Rose Tree Early Learning Center Website
+Theme URI:
+Author: Cheryl Ju
+Author URI: https://www.cherylju.com
+Description: Website Template for the Rose Tree Early Learning Center
+Version: 1.0.0
+License: GNU General Public license v2 or Later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: rtelc-template
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fund, and share what you've learned.
+*/
+
+/*==================================
+
+  Custom Font
+
+=====================================*/
+@font-face {
+  font-family: 'Finale Copyist Text Ext';
+  src: url('fonts/Finale-Copyist-Text-Ext.eot');
+  src: url('fonts/Finale-Copyist-Text-Ext.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Finale-Copyist-Text-Ext.woff2') format('woff2'),
+       url('fonts/Finale-Copyist-Text-Ext.woff') format('woff'),
+       url('fonts/Finale-Copyist-Text-Ext.ttf')  format('truetype'),
+       url('fonts/Finale-Copyist-Text-Ext.svg#Finale Copyist Text Ext') format('svg');
+}
+
+
+/*==================================
+
+  Universal Styling
+
+=====================================*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Finale Copyist Text Ext";
+}
+h2 {
+  font-family: adelle-sans, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
