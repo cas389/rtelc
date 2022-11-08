@@ -11,6 +11,8 @@
     // Font Awesome CSS
     wp_enqueue_style('font-awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+    wp_enqueue_style('font-awesome2', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css');
+
     // Main CSS Stylesheet
     wp_enqueue_style('main-styles', get_stylesheet_uri());
 
@@ -37,8 +39,8 @@
 
   ====================================== */
   $custom_image_header = array(
-    'width'   => 200,
-    'height'  => 100,
+    'width'   => 220,
+    'height'  => 125,
     'uploads' => true
   );
 
