@@ -91,9 +91,12 @@ Use it to make something cool, have fund, and share what you've learned.
 nav ul {
   list-style-type: none;
 }
-
-h1 {
+h1,
+h3,
+h4 {
   font-family: "Finale Copyist";
+}
+h1 {
   font-size: 2rem;
 }
 h2 {
@@ -101,6 +104,13 @@ h2 {
   font-weight: 300;
   font-style: normal;
   font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.75;
+  padding: 1rem 0;
+}
+p {
+  text-align: justify;
 }
 
 
@@ -203,6 +213,32 @@ header{
 
 /*==================================
 
+  Social Media Links (Css from WPGossip.com)
+
+=====================================*/
+footer {
+  margin: 2rem 0;
+}
+.left-footer,
+.right-footer,
+.center-links-footer,
+.center-logo-footer,
+.left-footer p,
+.right-footer p,
+.center-links-footer p {
+  text-align: center;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: .85rem;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+/*==================================
+
   Home Page
 
 =====================================*/
@@ -233,6 +269,7 @@ header{
   transition-duration: 1s;
   transition-timing-function: linear;
   transition-delay: .2s;
+  margin-bottom: 2rem;
 }
 .orange-button a {
   text-decoration: none;
@@ -265,11 +302,77 @@ header{
 .button-arrow {
   color: var(--orange);
 }
+.program-section {
+  margin-top: 4rem;
+  background-color: rgb(242, 180, 64, 0.4);
+  width: 60%;
+  margin: 3rem auto;
+  height: 24rem;
+}
+.card {
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  top: -4rem;
+  padding: 1rem;
+}
+.program-section-image {
+  width: 65%;
+  margin: 0 auto;
+}
+.program-section-button {
+  background: var(--orange);
+  text-transform: uppercase;
+}
+.instagram-feed-home {
+  background-color: rgb(3, 115, 95, 0.4);
+  padding: 1rem 2.5rem 2.5rem 2.5rem;
+}
+.instagram-feed-home h1 {
+  padding-bottom: 1rem;
+}
 
+/*==================================
 
+  Social Media Links (Css from WPGossip.com)
 
+=====================================*/
+ul.social-icon{
+  margin-top: 13px;
+}
+ul.social-icon > li {
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+}
+ul.social-icon > li a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+      background-color: #fff;
+  -webkit-transition: all 400ms linear;
+  transition: all 400ms linear;
+      display: table-cell;
+  vertical-align: middle;
+  font-size: 1rem;
+}
 
+ul.social-icon a {
+  color: var(--green);
+  border-color: transparent;
+}
 
+ul.social-icon a:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: transparent;
+}
+ol.social-icon,
+ul.social-icon {
+  padding-left: 0 !important;
+}
 /*==================================
 
   Responsive Web Coding - 768px by 1024px (Tablet)
@@ -284,10 +387,22 @@ header{
     font-size: 1.5rem;
   }
 
+  /* Footer */
+  .left-footer,
+  .left-footer p {
+    text-align: left
+  }
+  .right-footer,
+  .right-footer p,
+  .center-logo-footer {
+    text-align: right
+  }
+
   /* Home Page */
   .hero-section img {
     max-height: 300px;
     filter: brightness(.4);
+    margin-bottom: 2rem;
   }
   .home-title {
   	position: absolute;
@@ -301,6 +416,15 @@ header{
   }
   .orange-button {
     border: 1px solid var(--white);
+    margin-bottom: 0;
+  }
+  .program-section {
+    width: 40%;
+    height: 26rem;
+  }
+  .instagram-feed-home {
+    padding: 1rem 3.5rem 3.5rem 3.5rem;
+  }
 }
 
 /*==================================
@@ -309,7 +433,8 @@ Responsive Web Coding - 1366px by 768px (Laptop)
 
 =====================================*/
 @media screen and (min-width: 1366px) {
-	.header-menu {
+  /* Heaeder and Navigation */
+  .header-menu {
 		max-height: none;
 		top: -7rem;
 		position: relative;
@@ -327,6 +452,17 @@ Responsive Web Coding - 1366px by 768px (Laptop)
 	.hamburger-menu{
 		display: none;
 	}
+
+  /* Home Page */
+  .program-section {
+    width: 25%;
+  }
+  .container h1 {
+    padding-bottom: 2rem;
+  }
+  .instagram-feed-home {
+    padding: 1rem 7rem 4rem 7rem;
+  }
 }
 /*==================================
 

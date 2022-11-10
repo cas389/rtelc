@@ -8,10 +8,8 @@
     // Bootstrap CSS
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
 
-    // Font Awesome CSS
+    // Font Awesome
     wp_enqueue_style('font-awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-    wp_enqueue_style('font-awesome2', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css');
 
     // Main CSS Stylesheet
     wp_enqueue_style('main-styles', get_stylesheet_uri());
@@ -84,7 +82,7 @@
   function register_my_menus(){
     register_nav_menus(array(
       'main-menu'     => __('Main Menu'),
-      'footer-right'   => __('Right Footer Menu'),
+      'center-footer-links'   => __('Center Footer Menu'),
     ));
   }
 
@@ -118,34 +116,65 @@
   ====================================== */
   function blank_widgets_init(){
     register_sidebar(array(
+      'name'          => ('Home Page Widget - Programs Left'),
+      'id'            => 'left-home-page-widget-programs',
+      'description'   => 'Left Area in the Programs Section on Home Page',
+      'before_widget' => '<div class="left-home-page-widget-programs">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
+    register_sidebar(array(
+      'name'          => ('Home Page Widget - Programs Middle'),
+      'id'            => 'middle-home-page-widget-programs',
+      'description'   => 'Middle Area in the Programs Section on Home Page',
+      'before_widget' => '<div class="middle-home-page-widget-programs">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
+    register_sidebar(array(
+      'name'          => ('Home Page Widget - Programs Right'),
+      'id'            => 'right-home-page-widget-programs',
+      'description'   => 'Right Area in the Programs Section on Home Page',
+      'before_widget' => '<div class="right-home-page-widget-programs">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
+    register_sidebar(array(
+      'name'          => ('Instagram Feed'),
+      'id'            => 'instagram-feed',
+      'description'   => 'Displays Instagram Feed',
+      'before_widget' => '<div class="instagram-feed">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
+    register_sidebar(array(
       'name'          => ('Left Footer Widget'),
-      'id'            => 'left-footer-widget',
-      'description'   => 'Area in the left footer for content',
-      'before_widget' => '<div class="left-footer-widget-container">',
+      'id'            => 'left-footer',
+      'description'   => 'Displays a Widget for the Left Footer',
+      'before_widget' => '<div class="left-footer">',
       'after_widget'  => '</div>',// End of sidebar widget container
       'before_title'  => '<h2>',
       'after_title'   => '</h2>'
     ));
 
     register_sidebar(array(
-      'name'          => ('Middle Footer Widget'),
-      'id'            => 'middle-footer-widget',
-      'description'   => 'Area in the middle footer for content',
-      'before_widget' => '<div class="middle-footer-widget-container">',
+      'name'          => ('Right Footer Widget'),
+      'id'            => 'right-footer',
+      'description'   => 'Displays a Widget for the Right Footer',
+      'before_widget' => '<div class="right-footer">',
       'after_widget'  => '</div>',// End of sidebar widget container
       'before_title'  => '<h2>',
       'after_title'   => '</h2>'
     ));
 
-    register_sidebar(array(
-      'name'          => ('Sidebar Widget'),
-      'id'            => 'sidebar-widget',
-      'description'   => 'Area in the sidebar for content',
-      'before_widget' => '<div class="sidebar-widget-container">',
-      'after_widget'  => '</div>',// End of sidebar widget container
-      'before_title'  => '<h2>',
-      'after_title'   => '</h2>'
-    ));
   }
 
   add_action('widgets_init', 'blank_widgets_init');
@@ -300,4 +329,13 @@
   }
 
   add_filter('excerpt_length', 'new_excerpt_length');
+
+
+  /* ======================================
+
+   Removes Error (Learned in live class!)
+
+  ====================================== */
+  remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+
  ?>
