@@ -175,6 +175,16 @@
       'after_title'   => '</h2>'
     ));
 
+    register_sidebar(array(
+      'name'          => ('Right Sidebar'),
+      'id'            => 'right-sidebar',
+      'description'   => 'Displays a Widget on the Right Sidebar',
+      'before_widget' => '<div class="right-sidebar">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
   }
 
   add_action('widgets_init', 'blank_widgets_init');

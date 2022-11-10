@@ -87,6 +87,9 @@ Use it to make something cool, have fund, and share what you've learned.
 	border: 0;
 	box-sizing: border-box;
 }
+.container-fix {
+  padding: 2rem;
+}
 
 nav ul {
   list-style-type: none;
@@ -213,7 +216,7 @@ header{
 
 /*==================================
 
-  Social Media Links (Css from WPGossip.com)
+  Footer Section
 
 =====================================*/
 footer {
@@ -373,6 +376,43 @@ ol.social-icon,
 ul.social-icon {
   padding-left: 0 !important;
 }
+
+/*==================================
+
+  Page Template
+
+=====================================*/
+.hero-section-page img{
+  width: 100%;
+  object-fit: cover;
+  max-height: 200px;
+}
+.hero-section-page,
+.hr {
+  border-bottom: 3px solid var(--green);
+}
+.hero-section-page h1 {
+  margin-left: 1rem;
+  padding: 1rem 0 .5rem 0;
+}
+aside {
+  border-top: 3px solid var(--green);
+  padding-top: 2rem;
+}
+aside a {
+  color: var(--green);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+aside a:hover {
+  color: var(--orange);
+}
+.orange-bottom-border {
+  border-bottom: 3px solid var(--orange);
+}
+.main-section {
+  padding-bottom: 2rem;
+}
 /*==================================
 
   Responsive Web Coding - 768px by 1024px (Tablet)
@@ -425,6 +465,22 @@ ul.social-icon {
   .instagram-feed-home {
     padding: 1rem 3.5rem 3.5rem 3.5rem;
   }
+
+  /* Page Template */
+  .hero-section-page img{
+    max-height: 300px;
+  }
+  aside {
+    border-top: 0;
+    border-left: 3px solid var(--green);
+  }
+  .padding-right {
+    padding-right:2rem;
+  }
+  .padding-left {
+    padding-left:2rem;
+  }
+
 }
 
 /*==================================
@@ -454,6 +510,9 @@ Responsive Web Coding - 1366px by 768px (Laptop)
 	}
 
   /* Home Page */
+  .hero-section img {
+    max-height: 400px;
+  }
   .program-section {
     width: 25%;
   }
@@ -462,6 +521,11 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   }
   .instagram-feed-home {
     padding: 1rem 7rem 4rem 7rem;
+  }
+
+  /* Page Template */
+  .hero-section-page img{
+    max-height: 400px;
   }
 }
 /*==================================
