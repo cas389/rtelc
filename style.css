@@ -287,6 +287,43 @@ footer a:hover {
 
 /*==================================
 
+  Social Media Icons in Footer
+
+=====================================*/
+/* Placement for Social Icons */
+ul.social-icon > li {
+  display: inline-block;
+  padding: 5px;
+}
+/* Gives effects for when icons are hovered */
+ul.social-icon > li a {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  -webkit-transition: all 400ms linear;
+  transition: all 400ms linear;
+      display: table-cell;
+  vertical-align: middle;
+  font-size: 1.25rem;
+  text-align: center;
+}
+/* Changes Color of Links */
+ul.social-icon a {
+  color: var(--green);
+}
+/* Hover Effect of Icons */
+ul.social-icon a:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: transparent;
+}
+/* Fixing padding issue with icons */
+ul.social-icon {
+  padding-left: 0 !important;
+}
+
+/*==================================
+
   Home Page
 
 =====================================*/
@@ -386,49 +423,6 @@ footer a:hover {
 .instagram-feed-home {
   background-color: rgb(3, 115, 95, 0.4);
   padding: 1.3rem 2.5rem 2.5rem 2.5rem;
-}
-
-
-/*==================================
-
-  Social Media Links (Css from WPGossip.com)
-
-=====================================*/
-ul.social-icon{
-  margin-top: 13px;
-}
-ul.social-icon > li {
-  display: inline-block;
-  padding: 0;
-  text-align: center;
-}
-ul.social-icon > li a {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: inline-block;
-      background-color: #fff;
-  -webkit-transition: all 400ms linear;
-  transition: all 400ms linear;
-      display: table-cell;
-  vertical-align: middle;
-  font-size: 1rem;
-}
-
-ul.social-icon a {
-  color: var(--green);
-  border-color: transparent;
-}
-
-ul.social-icon a:hover {
-  background: var(--green);
-  color: #fff;
-  border-color: transparent;
-}
-ol.social-icon,
-ul.social-icon {
-  padding-left: 0 !important;
 }
 
 /*==================================

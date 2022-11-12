@@ -8,10 +8,6 @@
     // Bootstrap CSS
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
 
-    // Font Awesome
-    wp_register_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' );
-    wp_enqueue_style( 'fontawesome');
-
     // Main CSS Stylesheet
     wp_enqueue_style('main-styles', get_stylesheet_uri());
 
@@ -82,8 +78,8 @@
   ====================================== */
   function register_my_menus(){
     register_nav_menus(array(
-      'main-menu'             => __('Main Menu', 'mytheme'),
       'center-footer-links'   => __('Center Footer Menu'),
+      'main-menu'             => __('Main Menu'),
     ));
   }
 
@@ -192,10 +188,10 @@
 
   /* ======================================
 
-    Social Media Icons Function from WPGossip.com
+    Social Media Icons Function
 
   ====================================== */
-  function beshar_customizer($wp_customize){
+  function socialMediaIcons($wp_customize){
     $wp_customize->add_section(
   		'social_icons_sec',
   		array(
@@ -299,8 +295,40 @@
         'label'			=> __( 'Instagram')
         )
       );
+    $wp_customize->add_setting(
+      'social_tiktok',
+      array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw'
+       )
+      );
+    $wp_customize->add_control(
+      'social_tiktok',
+      array(
+        'settings'	=> 'social_tiktok',
+        'section'		=> 'social_icons_sec',
+        'type'			=> 'url',
+        'label'			=> __( 'Tiktok')
+        )
+      );
+    $wp_customize->add_setting(
+      'social_snapchat',
+      array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw'
+       )
+      );
+    $wp_customize->add_control(
+      'social_snapchat',
+      array(
+        'settings'	=> 'social_snapchat',
+        'section'		=> 'social_icons_sec',
+        'type'			=> 'url',
+        'label'			=> __( 'Snapchat')
+        )
+      );
     }
-    add_action('customize_register', 'beshar_customizer');
+    add_action('customize_register', 'socialMediaIcons');
 
   function social_links(){
 		$facebook   = get_theme_mod('social_facebook');
@@ -309,6 +337,8 @@
 		$youtube    = get_theme_mod('social_youtube');
     $linkedin   = get_theme_mod('social_linkedin');
     $instagram  = get_theme_mod('social_instagram');
+    $snapchat   = get_theme_mod('social_snapchat');
+    $tiktok     = get_theme_mod('social_tiktok');
 
 		if($facebook)
 			echo '<li><a href="'.esc_url( $facebook ).'" target="_blank"><i class="fa fa-facebook"></i></a></li>';
@@ -327,6 +357,12 @@
 
     if($instagram)
       echo '<li><a href="'.esc_url( $instagram ).'" target="_blank"><i class="fa fa-instagram"></i></a></li>';
+
+    if($tiktok)
+      echo '<li><a href="'.esc_url( $tiktok ).'" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>';
+
+    if($snapchat)
+      echo '<li><a href="'.esc_url( $snapchat ).'" target="_blank"><i class="fa-brands fa-snapchat"></i></a></li>';
   }
   add_action( 'social-media-links', 'social_links');
 
