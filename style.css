@@ -87,34 +87,10 @@ Use it to make something cool, have fund, and share what you've learned.
 	border: 0;
 	box-sizing: border-box;
 }
-.container-fix {
-  padding: 2rem;
-}
 
-nav ul {
-  list-style-type: none;
-}
-h1,
-h3,
-h4 {
-  font-family: "Finale Copyist";
-}
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-family: adelle-sans, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.75;
-  padding: 1rem 0;
-}
-p {
-  text-align: justify;
-}
+
+
+
 
 
 /*==================================
@@ -125,7 +101,7 @@ p {
 header{
   top: 0;
   width: 100%;
-	height: 10rem;
+	height: 8rem;
 }
 .header-logo-text {
 	padding: 1rem;
@@ -141,7 +117,7 @@ header{
     display: inline-block;
 		padding: .5rem 0 .5rem .5rem;
 }
-.header-menu {
+.main-navigation {
 	width: 101%;
   height: 100%;
   position: fixed;
@@ -155,18 +131,41 @@ header{
 	z-index: 999;
   margin-left: -1rem;
 }
-.header-menu a{
+
+.main-navigation a {
   display: block;
-  padding: 30px;
   color: var(--white);
 	text-decoration: none;
-	margin: 0 -2rem;
   text-transform: uppercase;
+  padding: 1rem 2rem;
+  margin-left: -2rem;
 }
-.header-menu a:hover{
+.main-navigation a:hover,
+.main-navigation li:hover ul a:hover,
+.sub-menu a:hover,
+.sub-menu li:hover ul a:hover {
   background-color: var(--orange);
 	color: white;
 }
+.down-arrow-for-menu{
+  font-family: "Font Awesome 6 Free";
+  content: "\f107";
+}
+.main-navigation li.fas {
+	display: flex;
+	align-items:center;
+}
+.sub-menu,
+.sub-menu:hover {
+  padding-left: 1rem;
+  margin: 0;
+  color: var(--white);
+}
+.main-navigation ul {
+    list-style-type:none;
+}
+
+
 .hamburger-menu{
   cursor: pointer;
   float: right;
@@ -199,7 +198,7 @@ header{
 .side-menu {
     display: none;
 }
-.side-menu:checked ~ .header-menu{
+.side-menu:checked ~ .main-navigation{
     max-height: 100%;
 }
 .side-menu:checked ~ .hamburger-menu .hamb-line {
@@ -213,6 +212,12 @@ header{
     transform: rotate(45deg);
     top:0;
 }
+
+
+
+/* Css from https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/ */
+
+
 
 /*==================================
 
@@ -238,6 +243,13 @@ footer {
 footer a {
   text-decoration: none;
   color: black;
+}
+footer a:hover {
+  color: var(--orange);
+  text-transform: uppercase;
+}
+.center-links-footer {
+  margin-left: -1rem;
 }
 
 /*==================================
@@ -335,6 +347,7 @@ footer a {
   padding-bottom: 1rem;
 }
 
+
 /*==================================
 
   Social Media Links (Css from WPGossip.com)
@@ -388,7 +401,7 @@ ul.social-icon {
   max-height: 200px;
 }
 .hero-section-page,
-.hr {
+hr {
   border-bottom: 3px solid var(--green);
 }
 .hero-section-page h1 {
@@ -427,6 +440,10 @@ aside a:hover {
     font-size: 1.5rem;
   }
 
+  /* Header and Navigation */
+  .hamburger-menu {
+    margin: 5rem 1rem;
+  }
   /* Footer */
   .left-footer,
   .left-footer p {
@@ -489,25 +506,63 @@ Responsive Web Coding - 1366px by 768px (Laptop)
 
 =====================================*/
 @media screen and (min-width: 1366px) {
-  /* Heaeder and Navigation */
-  .header-menu {
-		max-height: none;
-		top: -7rem;
-		position: relative;
-		float: right;
-		width: fit-content;
-		background-color: transparent;
-	}
-  .header-menu a {
-    color: var(--green);
+  /*Create a horizontal list with spacing*/
+  .main-navigation {
+    overflow: visible;
+    display: block;
+    background-color: transparent;
+    text-align: center;
+    position: absolute;
   }
-	.header-menu li{
-		float: left;
-		padding: 0 2rem;
-	}
-	.hamburger-menu{
-		display: none;
-	}
+  .main-navigation a {
+    margin-left: 0;
+    padding: .5rem;
+  }
+  .sub-menu {
+    background: white;
+  }
+  .main-navigation li a {
+    color: var(--green);
+    min-width: 12rem;
+  }
+  .main-navigation li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+  }
+  .main-navigation ul {
+    display: block;
+  }
+  /*Make dropdown links vertical*/
+  .main-navigation li ul li {
+    display: block;
+    float: none;
+  }
+  .sub-menu,
+  .sub-menu:hover {
+    padding-left: 0;
+  }
+  .main-navigation ul li, li a {
+    width: auto;
+  }
+  .hamburger-menu{
+  	display: none;
+  }
+  .menu-main-menu-in-header-container {
+  float: right;
+  margin: 2rem 28rem 0 0;
+  }
+
+  /*Hide dropdown links until they are needed */
+  .main-navigation li ul {
+      display: none;
+  }
+  /*Display the dropdown on hover*/
+  .main-navigation ul li a:hover + .sub-menu,
+  .sub-menu:hover {
+      display: block;
+
+  }
 
   /* Home Page */
   .hero-section img {
@@ -515,9 +570,6 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   }
   .program-section {
     width: 25%;
-  }
-  .container h1 {
-    padding-bottom: 2rem;
   }
   .instagram-feed-home {
     padding: 1rem 7rem 4rem 7rem;
@@ -527,12 +579,4 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   .hero-section-page img{
     max-height: 400px;
   }
-}
-/*==================================
-
-Responsive Web Coding - 1920px by 1024 px (Desktop)
-
-=====================================*/
-@media screen and (min-width: 1500px) {
-
 }
