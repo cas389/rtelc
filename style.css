@@ -663,7 +663,15 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   .sub-menu:hover {
       display: block;
   }
-
+  /* Adds Font Awesome Arrow to Programs Section and then Gets Rid of it for Submenu Items */
+  .has-arrow a::before {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    margin-right: 5px;
+  }
+  .sub-menu a::before {
+    content: " ";
+  }
   /*==================================
     Home Page
   =====================================*/

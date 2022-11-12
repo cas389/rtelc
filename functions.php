@@ -9,7 +9,8 @@
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
 
     // Font Awesome
-    wp_enqueue_style('font-awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_register_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' );
+    wp_enqueue_style( 'fontawesome');
 
     // Main CSS Stylesheet
     wp_enqueue_style('main-styles', get_stylesheet_uri());
