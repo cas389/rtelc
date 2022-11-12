@@ -7,4 +7,4 @@ Website for Rose Tree Early Learning Center
 - [Adding Adobe Fonts to Functions Page](https://chamankumar.co.uk/blog/wordpress/enqueue-typekit-font)
 - [Webfont Generator for Custom Font](https://www.creativefabrica.com/webfont-generator/#)
 - [Button Animation CSS Idea](https://codepen.io/jsomai/pen/podqRb)
-- [Documentation on Adding Photos using Advanced Custom Fields Plugin](https://www.advancedcustomfields.com/resources/image/)
+- [Creating Sub-Menu Dropdown Idea](https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/)

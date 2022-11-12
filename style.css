@@ -89,8 +89,31 @@ Use it to make something cool, have fund, and share what you've learned.
 }
 
 
+/*==================================
 
+  Headline Tags and Paragraph Stylings
 
+=====================================*/
+h1,
+h2 {
+  font-size: 2.1rem;
+  font-family: "Finale Copyist";
+}
+h2 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+h3 {
+  font-size: 1.75rem;
+  font-family: "Finale Copyist";
+  padding-top: 1.5rem;
+}
+h4 {
+  font-size: 1.4rem;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
 
 
 /*==================================
@@ -98,25 +121,41 @@ Use it to make something cool, have fund, and share what you've learned.
   Header and Header Navigation
 
 =====================================*/
+/*==================================
+  Header Background
+=====================================*/
+/* Header */
 header{
   top: 0;
   width: 100%;
 	height: 9rem;
 }
+/*==================================
+  Logo Section
+=====================================*/
+/* Displays if user doesn't upload logo image and just uses text */
 .header-logo-text {
 	padding: 1rem;
+  margin: 0 2rem 1rem 1rem;
   font-family: "Finale Copyist", adelle-sans;
-	font-size: 1.85rem;
+	font-size: 1.5rem;
 	text-transform: uppercase;
+  max-width: 15rem;
 }
 .header-logo-text a {
 	color: var(--green);
 	text-decoration: none;
 }
+/* Displayed if user uploads logo image */
 .logo{
     display: inline-block;
 		padding: .5rem 0 .5rem .5rem;
 }
+
+/*==================================
+  Navigation Section
+=====================================*/
+/* Stylizes Main Navigation Section */
 .main-navigation {
 	width: 101%;
   height: 100%;
@@ -131,7 +170,6 @@ header{
 	z-index: 999;
   margin-left: -1rem;
 }
-
 .main-navigation a {
   display: block;
   color: var(--white);
@@ -140,6 +178,7 @@ header{
   padding: 1rem 2rem;
   margin-left: -2rem;
 }
+/* Background when clicked on hamburger menu */
 .main-navigation a:hover,
 .main-navigation li:hover ul a:hover,
 .sub-menu a:hover,
@@ -147,19 +186,18 @@ header{
   background-color: var(--orange);
 	color: white;
 }
-.main-navigation li.fas {
-	display: flex;
-	align-items:center;
-}
+/* Submenu Styling */
 .sub-menu,
 .sub-menu:hover {
   padding-left: 1rem;
   margin: 0;
   color: var(--white);
 }
+/* Gets rid of bullet points on navigation items */
 .main-navigation ul {
     list-style-type:none;
 }
+/* Stylizes Hamburger Icon and Allows 'Animation' for opening and closing */
 .hamburger-menu{
   cursor: pointer;
   float: right;
@@ -207,20 +245,16 @@ header{
     top:0;
 }
 
-
-
-/* Css from https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/ */
-
-
-
 /*==================================
 
   Footer Section
 
 =====================================*/
+/* Footer Styling */
 footer {
   margin: 2rem 0;
 }
+/* Footer Font and Paragrah Styling */
 .left-footer,
 .right-footer,
 .center-links-footer,
@@ -234,14 +268,19 @@ footer {
   font-style: normal;
   font-size: .85rem;
 }
+/* Link Styling for Footer Items */
 footer a {
   text-decoration: none;
-  color: black;
+  color: var(--green);
+}
+footer ul {
+  list-style-type: none;
 }
 footer a:hover {
   color: var(--orange);
   text-transform: uppercase;
 }
+/* Fixing Margin with the column */
 .center-links-footer {
   margin-left: -1rem;
 }
@@ -251,20 +290,17 @@ footer a:hover {
   Home Page
 
 =====================================*/
-.hero-section {
-  position: relative;
-}
+/* Stylizes Hero Image to Fit Screen */
 .hero-section img {
   width: 100%;
   object-fit: cover;
   max-height: 200px;
 }
-.home-title {
+/* Makes all text content centered in the section */
+.home-text {
   text-align: center;
 }
-.home-title h2 {
-  margin: -.25rem 0 .5rem 0;
-}
+/* Styling Orange Button */
 .orange-button {
   font-family: adelle-sans, sans-serif;
   font-weight: 300;
@@ -280,6 +316,7 @@ footer a:hover {
   transition-delay: .2s;
   margin-bottom: 2rem;
 }
+/* Styling Orange Button Link and Hover Properties */
 .orange-button a {
   text-decoration: none;
   color: white;
@@ -299,6 +336,11 @@ footer a:hover {
   outline: 0;
   color: #fff;
   }
+/* Arrow Span Class */
+.button-arrow {
+  color: var(--orange);
+}
+/* CSS For Button Sliding Animation */
 .btn-slide {
   background: linear-gradient(to left, var(--orange) 40%, var(--white) 0%);
   background-size: 200% 100%;
@@ -308,16 +350,16 @@ footer a:hover {
   background-position: left bottom;
   color: var(--orange);
 }
-.button-arrow {
-  color: var(--orange);
-}
+
+/* Styling Program Section of Page */
 .program-section {
   margin-top: 4rem;
   background-color: rgb(242, 180, 64, 0.4);
-  width: 60%;
+  width: 80%;
   margin: 3rem auto;
-  height: 24rem;
+  height: 22rem;
 }
+/* Changes the transparent div container so photo can move outside the orange background */
 .card {
   background-color: transparent;
   border: 0;
@@ -325,20 +367,25 @@ footer a:hover {
   top: -4rem;
   padding: 1rem;
 }
+/* Changes the circle image size & adds border */
 .program-section-image {
-  width: 65%;
+  width: 50%;
   margin: 0 auto;
+  border: 5px solid white;
+  border-radius: 50%;
 }
-.program-section-button {
-  background: var(--orange);
-  text-transform: uppercase;
+/* Stylizes Button that User Creats in Widgets */
+.wp-element-button {
+  padding: 10px 15px;
 }
+.wp-element-button:hover{
+  background-color: var(--green) !important;
+  color: white !important;
+}
+/* Stylizes Instagram Background Section */
 .instagram-feed-home {
   background-color: rgb(3, 115, 95, 0.4);
-  padding: 1rem 2.5rem 2.5rem 2.5rem;
-}
-.instagram-feed-home h1 {
-  padding-bottom: 1rem;
+  padding: 1.3rem 2.5rem 2.5rem 2.5rem;
 }
 
 
@@ -420,71 +467,105 @@ aside a:hover {
 .main-section {
   padding-bottom: 2rem;
 }
+
 /*==================================
 
   Responsive Web Coding - 768px by 1024px (Tablet)
 
 =====================================*/
 @media screen and (min-width: 768px) {
-  /* Universal Styling */
-  h1 {
+  /*==================================
+    Headlines and Paragraph Styling
+  =====================================*/
+  h1,
+  h2 {
     font-size: 2.75rem;
   }
-  h2 {
+  h4 {
     font-size: 1.5rem;
   }
 
-  /* Header and Navigation */
-  .side-menu:checked ~ .main-navigation {
-    margin-top: 9rem;
-}
-
+  /*==================================
+    Logo Section
+  =====================================*/
+  /* Logo Text Format */
+  .header-logo-text {
+    padding: 22px 0 31px 10px;
+    margin: 0;
+  }
+  /*==================================
+    Navigation Section
+  =====================================*/
+  /* Navigation Background Placement when Hamburger Icon is Clicked on and Off */
+  .side-menu:checked ~ .main-navigation,
   .main-navigation {
     margin-top: 9rem;
   }
+  /* Placement of Hamburger Icon */
   .hamburger-menu {
     margin: 4rem 1rem;
   }
-  /* Footer */
+  /*==================================
+    Footer Section
+  =====================================*/
+  /* Changes columns to be left aligned instead of centered */
   .left-footer,
   .left-footer p {
     text-align: left
   }
+  /* Changes columns to be right aligned instead of centered */
   .right-footer,
   .right-footer p,
   .center-logo-footer {
     text-align: right
   }
 
-  /* Home Page */
+  /*==================================
+    Home Page
+  =====================================*/
+  /* Allowes text overlay on image */
+  .hero-section {
+    position: relative;
+  }
+  /* Adds Darken Filter to easily read overlayed text */
   .hero-section img {
     max-height: 300px;
     filter: brightness(.4);
     margin-bottom: 2rem;
   }
-  .home-title {
+  /* Stylizes Fonts for Text Over Photo */
+  .home-text {
   	position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .home-title h1,
-  .home-title h2 {
+  .home-text h1,
+  .home-text h4 {
   	color: white;
   }
+  /* Stylized Button For being Over Photo in Hero Section */
   .orange-button {
     border: 1px solid var(--white);
     margin-bottom: 0;
   }
+  /* Changes the Background of Programs Section to fit Tablets */
   .program-section {
-    width: 40%;
-    height: 26rem;
+    width: 48%;
+    height: 25rem;
   }
+  /* Changes Image Photo in Programs Section to fit Tablets */
+  .program-section-image {
+    width: 65%;
+  }
+  /* Stylizes Instagram Background Section */
   .instagram-feed-home {
     padding: 1rem 3.5rem 3.5rem 3.5rem;
   }
 
-  /* Page Template */
+  /*==================================
+    Page Template
+  =====================================*/
   .hero-section-page img{
     max-height: 300px;
   }
@@ -500,86 +581,109 @@ aside a:hover {
   }
 
 }
+/*==================================
 
+Responsive Web Coding - Min Width 992 (To Fix Issue on Home Page)
 
-
-
-
-
-
-
+=====================================*/
+@media screen and (min-width: 992px) {
+  /* Fixing Section Div Issue with Boxes at this size before getting to laptop*/
+  .program-section {
+    width: 40%;
+  }
+  /* Fixing Image Issue, associated with above CSS issue */
+  .program-section-image {
+    width: 50%;
+  }
+}
 /*==================================
 
 Responsive Web Coding - 1366px by 768px (Laptop)
 
 =====================================*/
 @media screen and (min-width: 1366px) {
-  /* Header and Navigation */
+  /*==================================
+    Logo Section
+  =====================================*/
+  /* Logo Text Format */
+  .header-logo-text {
+    padding: 35px 0 31px 10px;
+    margin: 0;
+    max-width: none;
+  }
+  /*==================================
+    Navigation Section
+  =====================================*/
+  /* Removes Hamburger Icon from Mobile and Tablet View */
   .hamburger-menu{
   	display: none;
   }
-  /*Create a horizontal list with spacing*/
+  /* Necessary changes from mobile view */
   .main-navigation {
     overflow: visible;
-    display: block;
-    background-color: transparent;
     text-align: center;
     position: relative;
-    margin-left: 0;
     margin-top: 3rem;
+    margin-left: 0rem;
   }
   .main-navigation a {
     margin-left: 0;
     padding: 1rem 0;
-  }
-  .main-navigation li a {
     color: var(--green);
     min-width: 11rem;
   }
+  /* Allowes the Navigation to be in a straight line instead of vertical */
   .main-navigation li {
     display:inline-block;
   }
+  /* Allowes the Navigation to Float Right */
   .main-navigation ul {
-    display: block;
     float: right;
   }
-  /*Make dropdown links vertical*/
+  /* Allows the Submenu Dropdown to be vertical instead of horizontal */
   .main-navigation li ul li {
     display: block;
     float: none;
   }
+  /* Allowes the background of Submenu Dropdown to be white instead of transparent over the hero image */
   .sub-menu {
     background-color: white;
   }
+  /* Gets rid of padding that is needed on mobile version */
   .sub-menu,
   .sub-menu:hover {
     padding-left: 0;
   }
-  /*Hide dropdown links until they are needed */
+  /* Hide Submenu Dropdown links until they are needed */
   .main-navigation li ul {
       display: none;
   }
-  /*Display the dropdown on hover*/
+  /* Displays the Submenu Dropdown on Regular Menu Hover */
   .main-navigation ul li a:hover + .sub-menu,
   .sub-menu:hover {
       display: block;
   }
 
-
-
-
-  /* Home Page */
+  /*==================================
+    Home Page
+  =====================================*/
+  /* Allows the Hero Image to be slightly larger for Laptop/Desktop */
   .hero-section img {
     max-height: 400px;
   }
+  /* Fixes size of Background in Programs Section for Laptops */
   .program-section {
-    width: 25%;
+    width: 30%;
+    height: 23rem;
   }
+  /* Stylizes Instagram Background Section */
   .instagram-feed-home {
     padding: 1rem 7rem 4rem 7rem;
   }
 
-  /* Page Template */
+  /*==================================
+    Page Template
+  =====================================*/
   .hero-section-page img{
     max-height: 400px;
   }

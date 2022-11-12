@@ -5,11 +5,11 @@
   <!-- Hero Image and Page Title -->
   <section class="hero-section">
     <?php the_post_thumbnail('full'); ?>
-    <section class="home-title">
+    <section class="home-text">
       <h1><?php the_title(); ?></h1>
-      <h2><?php // Showing custom fields from plugin named "Advanced Custom Fields" from plugin library
-      the_field('sub_heading'); ?> </h2>
-      <button class="orange-button btn-slide"><a href="<?php the_field('button_link') ?>"><span class="button-arrow"> &#8702; &nbsp;</span> <?php the_field('button_text') ?></a></button>
+      <h4><?php // Showing custom fields from plugin named "Advanced Custom Fields" from plugin library
+      the_field('sub_heading'); ?> </h4>
+      <button class="orange-button btn-slide"><a href="<?php the_field('button_link') ?>"><span class="button-arrow"> <i class="fa-solid fa-arrow-right"></i> &nbsp;</span> <?php the_field('button_text') ?></a></button>
     </section> <!-- End of page-title Section -->
   </section> <!-- End of hero-section Section -->
 
@@ -19,7 +19,7 @@
 
   <!-- Start of Program Section -->
   <section class="container">
-    <h1 class="text-center">Our Programs</h1>
+    <h2>Our Programs</h2>
     <div class="row">
 
       <!-- Preschool Block -->
@@ -53,7 +53,7 @@
 
 
   <section class="instagram-feed-home">
-    <h1 class="text-center">Our Gallery</h1>
+    <h2 class="text-center">Our Gallery</h2>
     <?php
       dynamic_sidebar('instagram-feed');
     ?>
