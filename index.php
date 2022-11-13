@@ -43,7 +43,7 @@
       while($query->have_posts()){
         $query->the_post(); ?>
           <div class="blog-post col-sm-6 col-lg-3">
-            <?php the_post_thumbnail('medium');?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium');?></a>
             <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
             <p><?php echo get_the_excerpt(); ?></p>
             <p><a class="read-more-link" href="<?php the_permalink(); ?>">Read More...</a></p>

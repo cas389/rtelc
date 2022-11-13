@@ -39,7 +39,7 @@
 
     <aside class="col-md-4 aside-section">
       <!-- Right Side Widget Bar Code -->
-      <?php dynamic_sidebar('right-sidebar'); ?>
+      <?php dynamic_sidebar('right-sidebar-pages'); ?>
     </aside>
   </div>
 </main> <!-- End of text-area Section -->

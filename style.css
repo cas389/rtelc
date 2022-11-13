@@ -552,6 +552,42 @@ ul.social-icon {
   color: var(--green);
 }
 
+
+/*==================================
+
+  Blog Post Pages (single.php)
+
+=====================================*/
+/* Put divider in between blog posts  */
+.small-preview-blog-div {
+  border-bottom: 3px solid var(--green);
+}
+.small-preview-blog-div:nth-child(5) {
+  border: 0;
+}
+.small-preview-blog-text a {
+text-transform: capitalize;
+color: black;
+}
+/* Stylizes Photo Image */
+.small-preview-blog-photo img {
+  margin: 1.7rem 1rem 1rem 0;
+  float: left;
+  width: 125px;
+  height: 125px;
+}
+/* Stylizes Text */
+.small-preview-blog-text {
+  margin-left: 9rem;
+  margin-bottom: 2rem;
+  font-size: .85rem;
+}
+.small-preview-blog-text h5 {
+  margin-top: 1.6rem;
+}
+.small-preview-blog-text p {
+  text-align: left;
+}
 /*==================================
 
   Responsive Web Coding - 768px by 1024px (Tablet)
@@ -671,6 +707,21 @@ ul.social-icon {
   }
   .main-section {
     padding: 0 2rem 0 0;
+  }
+
+  /*==================================
+    Blog Post Pages (single.php)
+  =====================================*/
+  /* Reformatting for single column instead of two for Tablet */
+  .small-preview-blog-text {
+    margin-left: 0rem;
+  }
+  .small-preview-blog-text h5 {
+    padding: 0;
+  }
+  .small-preview-blog-photo img {
+    margin: 1.7rem 0 0 0;
+    float: none;
   }
 }
 /*==================================
@@ -793,6 +844,22 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   .aside-section,
   .main-section {
     padding: 0 2rem;
+  }
+  /*==================================
+    Blog Post Pages (single.php)
+  =====================================*/
+  /* Creating two columns again for Laptop Version  */
+  .small-preview-blog-photo img {
+    margin: 1.7rem 1rem 1rem 0;
+    float: left;
+  }
+  .small-preview-blog-text {
+    margin-left: 9rem;
+    margin-bottom: 2rem;
+  }
+  .small-preview-blog-text h5 {
+    margin-top: 0;
+    padding: 1.4rem 0 0 0;
   }
 }
 
