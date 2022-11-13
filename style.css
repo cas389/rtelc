@@ -708,6 +708,19 @@ color: black;
   .main-section {
     padding: 0 2rem 0 0;
   }
+  /* Stylizes Pagination */
+  .pagination-para {
+  	padding: 1rem 0 4rem 0;
+  	text-align: center;
+  	font-weight: bold;
+  }
+  .pagination-para a {
+  	text-decoration: none;
+  	color: #035656;
+  }
+  .pagination-para a:hover {
+  	text-decoration: underline;
+  }
 
   /*==================================
     Blog Post Pages (single.php)

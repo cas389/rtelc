@@ -406,7 +406,7 @@
     $currentBefore = '<span class="current">';
     $currentAfter = '</span>';
 
-    if ( !is_home() && !is_front_page() || is_paged() ) {
+    if ( !is_home() && !is_front_page() || is_paged () ) {
 
       echo '<div class="wrap" id="crumbs">';
 
