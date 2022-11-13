@@ -114,8 +114,16 @@ h4 {
   font-weight: 300;
   font-style: normal;
 }
-
-
+p,
+li {
+  font-family: adelle-sans, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: justify;
+}
+ul {
+  list-style-type: none;
+}
 /*==================================
 
   Header and Header Navigation
@@ -271,10 +279,15 @@ footer {
 /* Link Styling for Footer Items */
 footer a {
   text-decoration: none;
+  text-transform: uppercase;
   color: var(--green);
+  text-align: center;
 }
 footer ul {
   list-style-type: none;
+}
+footer li {
+  text-align: center;
 }
 footer a:hover {
   color: var(--orange);
@@ -411,14 +424,6 @@ ul.social-icon {
   border: 5px solid white;
   border-radius: 50%;
 }
-/* Stylizes Button that User Creats in Widgets */
-.wp-element-button {
-  padding: 10px 15px;
-}
-.wp-element-button:hover{
-  background-color: var(--green) !important;
-  color: white !important;
-}
 /* Stylizes Instagram Background Section */
 .instagram-feed-home {
   background-color: rgb(3, 115, 95, 0.4);
@@ -427,39 +432,92 @@ ul.social-icon {
 
 /*==================================
 
+  Fixing Widget Issues
+
+=====================================*/
+
+/* Gets rid of the word "Search" above Search Bar */
+.wp-block-search__label {
+  display: none;
+}
+/* Stylizes Button that User Creates in Widgets */
+.wp-element-button {
+  padding: 10px 15px;
+}
+.wp-element-button:hover{
+  background-color: var(--green) !important;
+  color: white !important;
+}
+
+/*==================================
+
+  Breadcrumbs
+
+=====================================*/
+#crumbs {
+  margin: 15px 0;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+#crumbs a {
+  font-weight: 400;
+  color: var(--orange);
+  text-decoration: none;
+}
+#crumbs a:hover {
+  color: var(--green);
+}
+
+/*==================================
+
   Page Template
 
 =====================================*/
+/* Stylizes Hero Image Section */
 .hero-section-page img{
   width: 100%;
   object-fit: cover;
   max-height: 200px;
 }
-.hero-section-page,
-hr {
+/* Adds a border to the bottom of Page Title */
+.hero-section-page {
   border-bottom: 3px solid var(--green);
 }
-.hero-section-page h1 {
-  margin-left: 1rem;
-  padding: 1rem 0 .5rem 0;
+/* Changes H2 Tag */
+.page-h2 {
+  padding: 15px 0 0 0;
 }
-aside {
-  border-top: 3px solid var(--green);
-  padding-top: 2rem;
+/* Changes Padding in Main Section */
+.main-section {
+  padding-bottom: 2rem;
+  padding: 0 2rem .5rem 2rem;
 }
-aside a {
+/* Adds Font Awesome icons to lists in the Main Section */
+.main-section li::before {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  padding-right: 10px;
+  font-size: .75rem;
+  margin-left: -15px;
+}
+/* Changes Padding and adds Border in Aside Section */
+.aside-section {
+  padding: 2rem;
+  border-top: 3px solid var(--orange);
+}
+/* Stylizes Links in the Sidebar */
+.aside-section a {
   color: var(--green);
   text-transform: uppercase;
   text-decoration: none;
 }
-aside a:hover {
+.aside-section a:hover {
   color: var(--orange);
 }
+/* Gives a border above the footer section */
 .orange-bottom-border {
   border-bottom: 3px solid var(--orange);
-}
-.main-section {
-  padding-bottom: 2rem;
 }
 
 /*==================================
@@ -560,20 +618,28 @@ aside a:hover {
   /*==================================
     Page Template
   =====================================*/
+  /* Allows photo to be larger on tablets */
   .hero-section-page img{
     max-height: 300px;
   }
-  aside {
+  /* Changes h2 on pages */
+  .page-h2 {
+    text-align: left;
+    padding-bottom: 15px;
+  }
+  /* Fixes borders and margins on aside section */
+  .aside-section {
     border-top: 0;
     border-left: 3px solid var(--green);
+    margin-bottom: 2rem;
   }
-  .padding-right {
-    padding-right:2rem;
+  /* Changes padding from mobile device */
+  .aside-section {
+    padding: 0 0 0 2rem;
   }
-  .padding-left {
-    padding-left:2rem;
+  .main-section {
+    padding: 0 2rem 0 0;
   }
-
 }
 /*==================================
 
@@ -629,6 +695,7 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   /* Allowes the Navigation to be in a straight line instead of vertical */
   .main-navigation li {
     display:inline-block;
+    text-align: center;
   }
   /* Allowes the Navigation to Float Right */
   .main-navigation ul {
@@ -666,6 +733,7 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   .sub-menu a::before {
     content: " ";
   }
+
   /*==================================
     Home Page
   =====================================*/
@@ -686,10 +754,17 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   /*==================================
     Page Template
   =====================================*/
+  /* Makes photo slightly larger for laptop */
   .hero-section-page img{
     max-height: 400px;
   }
+  /* Changes padding from tablet device */
+  .aside-section,
+  .main-section {
+    padding: 0 2rem;
+  }
 }
+
 
 
 
