@@ -94,12 +94,13 @@ Use it to make something cool, have fund, and share what you've learned.
   Headline Tags and Paragraph Stylings
 
 =====================================*/
-h1,
-h2 {
+h1 {
   font-size: 2.1rem;
   font-family: "Finale Copyist";
 }
 h2 {
+  font-size: 2.1rem;
+  font-family: "Finale Copyist";
   text-align: center;
   padding-bottom: 1rem;
 }
@@ -113,6 +114,11 @@ h4 {
   font-family: adelle-sans, sans-serif;
   font-weight: 300;
   font-style: normal;
+}
+h5 {
+  font-size: 1.3rem;
+  font-family: "Finale Copyist";
+  padding-top: 1.5rem;
 }
 p,
 li {
@@ -522,6 +528,32 @@ ul.social-icon {
 
 /*==================================
 
+  Blog Main Post Page
+
+=====================================*/
+/* Move down container on the page */
+.blog-post {
+  margin-top: 2rem;
+}
+.blog-post img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+.blog-post h5 a {
+  color: black;
+  text-decoration: none;
+}
+.read-more-link {
+  color: var(--orange);
+  text-decoration: none;
+}
+.read-more-link:hover {
+  color: var(--green);
+}
+
+/*==================================
+
   Responsive Web Coding - 768px by 1024px (Tablet)
 
 =====================================*/
@@ -726,9 +758,8 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   }
   /* Adds Font Awesome Arrow to Programs Section and then Gets Rid of it for Submenu Items */
   .has-arrow a::before {
-    content: "\f107";
+    content: "\f107  ";
     font-family: "Font Awesome 6 Free";
-    margin-right: 5px;
   }
   .sub-menu a::before {
     content: " ";
@@ -756,7 +787,7 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   =====================================*/
   /* Makes photo slightly larger for laptop */
   .hero-section-page img{
-    max-height: 400px;
+    min-height: 400px;
   }
   /* Changes padding from tablet device */
   .aside-section,

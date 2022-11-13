@@ -391,7 +391,7 @@
 
   ====================================== */
   function BreadcrumFunction() {
-    $delimiter = '<i class="fa-solid fa-angles-right"></i>';
+    $delimiter = '&nbsp; <i class="fa-solid fa-angles-right"></i> &nbsp;';
     $name = '<i class="fa-solid fa-house-chimney"></i> Home'; //text for the 'Home' link
     $currentBefore = '<span class="current">';
     $currentAfter = '</span>';
