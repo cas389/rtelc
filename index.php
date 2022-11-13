@@ -16,6 +16,16 @@
 
 <main class="container main-section">
   <div class="row">
+    <div class="col-md-12">
+      <section class="col-md-12 main-section">
+        <?php
+        //Adds Breadcrumb
+        BreadcrumFunction();
+        ?>
+      </section>
+    </div>
+
+
     <?php
     //Query
 
