@@ -551,7 +551,20 @@ ul.social-icon {
 .read-more-link:hover {
   color: var(--green);
 }
-
+/* Stylizes Pagination */
+.pagination-para {
+  text-align: center;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.pagination-para a {
+  text-decoration: none;
+  color: var(--green);
+}
+.pagination-para a:hover {
+  color: var(--orange);
+}
 
 /*==================================
 
@@ -562,7 +575,7 @@ ul.social-icon {
 .small-preview-blog-div {
   border-bottom: 3px solid var(--green);
 }
-.small-preview-blog-div:nth-child(5) {
+.small-preview-blog-div:last-child {
   border: 0;
 }
 .small-preview-blog-text a {
@@ -707,19 +720,6 @@ color: black;
   }
   .main-section {
     padding: 0 2rem 0 0;
-  }
-  /* Stylizes Pagination */
-  .pagination-para {
-  	padding: 1rem 0 4rem 0;
-  	text-align: center;
-  	font-weight: bold;
-  }
-  .pagination-para a {
-  	text-decoration: none;
-  	color: #035656;
-  }
-  .pagination-para a:hover {
-  	text-decoration: underline;
   }
 
   /*==================================

@@ -102,7 +102,8 @@
       'format'             => '?paged=%#%',
       'current'            => max( 1, get_query_var('paged') ),
       'total'              => $wp_query->max_num_pages,
-      'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
+      'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>',
+      'after_page_number'  => ' • '
     ));
   }
 
