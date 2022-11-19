@@ -601,6 +601,54 @@ color: black;
 .small-preview-blog-text p {
   text-align: left;
 }
+
+/*==================================
+
+  404 Page
+
+=====================================*/
+
+/* Allowes text overlay on image */
+.hero-404 {
+  position: relative;
+}
+/* Stylizes Image */
+.hero-404 img {
+  width: 100%;
+  object-fit: cover;
+}
+/* Stylizes Fonts for Text Over Photo */
+.text-404 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,.75);
+  padding: 1rem;
+  text-align: center;
+}
+.text-404 h1,
+.text-404 p {
+  color: black;
+  text-align: center;
+}
+/* Stylizes button link */
+.button-404 {
+  background-color: var(--orange);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+}
+.button-404:hover {
+  color: var(--orange);
+  background-color: var(--white);
+}
+
+
+
+
 /*==================================
 
   Responsive Web Coding - 768px by 1024px (Tablet)
@@ -873,6 +921,12 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   .small-preview-blog-text h5 {
     margin-top: 0;
     padding: 1.4rem 0 0 0;
+  }
+  /*==================================
+    404 Page
+  =====================================*/
+  .hero-404 {
+    margin-top: -5rem;
   }
 }
 
