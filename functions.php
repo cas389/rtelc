@@ -193,6 +193,37 @@
       'after_title'   => '</h2>'
     ));
 
+
+    register_sidebar(array(
+      'name'          => ('Contact Page - Location'),
+      'id'            => 'contact-location',
+      'description'   => 'Displays a Widget for the Location Section on the Contact Page',
+      'before_widget' => '<div class="contact-location">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
+    register_sidebar(array(
+      'name'          => ('Contact Page - Email'),
+      'id'            => 'contact-email',
+      'description'   => 'Displays a Widget for the Email Section on the Contact Page',
+      'before_widget' => '<div class="contact-email">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
+    register_sidebar(array(
+      'name'          => ('Contact Page - Phone Number'),
+      'id'            => 'contact-phone',
+      'description'   => 'Displays a Widget for the Phone Number Section on the Contact Page',
+      'before_widget' => '<div class="contact-phone">',
+      'after_widget'  => '</div>',// End of sidebar widget container
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+    ));
+
   }
 
   add_action('widgets_init', 'blank_widgets_init');
@@ -407,7 +438,7 @@
     $currentBefore = '<span class="current">';
     $currentAfter = '</span>';
 
-    if ( !is_home() && !is_front_page() || is_paged () ) {
+    if ( !is_home() || !is_front_page() || is_paged () ) {
 
       echo '<div class="wrap" id="crumbs">';
 
