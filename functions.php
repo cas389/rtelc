@@ -427,6 +427,63 @@
   ====================================== */
   remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 
+
+  /* ======================================
+
+    Theme Settings
+
+  ====================================== */
+  function rtelc_theme_settings_page(){ ?>
+    <div class="wrap">
+      <h1>Rose Tree Early Learning Center Theme</h1>
+      <p>Here you can set up your Facebook, Instagram, and Google Analytics accounts!</p>
+      <p>More settings coming soon</p>
+
+      <form method="post" action="options.php">
+        <?php
+         settings_fields('rtelc-section'); //Register Section
+         do_settings_sections('rtelc-options'); //Group ID for all of the fields
+         submit_button();
+        ?>
+      </form>
+  <? }
+
+  function display_instagram_element(){ ?>
+    <input type="text" name="instagram_url" id="instagram_url" value="<?php echo get_option('instagram_url'); ?>" /><?php
+  }
+
+  function display_facebook_element(){ ?>
+    <input type="text" name="facebook_url" id="facebook_url" value="<?php echo get_option('facebook_url'); ?>" /><?php
+  }
+
+  function display_google_analytics_element(){ ?>
+    <input type="text" name="google_analytics_code" id="google_analytics_code" value="<?php echo get_option('google_analytics_code'); ?>" /><?php
+  }
+
+  function display_theme_panel_fields(){
+    add_settings_section('rtelc-section', "All settings", null, 'rtelc-options');
+
+    add_settings_field('instagram_url', 'Instagram Profile URL', 'display_instagram_element', 'rtelc-options', 'rtelc-section');
+
+    add_settings_field('facebook_url', 'Facebook Profile URL', 'display_facebook_element', 'rtelc-options', 'rtelc-section');
+
+    add_settings_field('google_analytics_code', 'Google Analytics Tracking ID (example UA-1234567-1)', 'display_google_analytics_element', 'rtelc-options', 'rtelc-section');
+
+    register_setting('rtelc-section', 'instagram_url');
+    register_setting('rtelc-section', 'facebook_url');
+    register_setting('rtelc-section', 'google_analytics_code');
+  }
+
+  add_action('admin_init', 'display_theme_panel_fields');
+
+  function add_theme_menu_item(){
+    add_menu_page('Rose Tree Early Learning Center Theme', 'Rose Tree Early Learning Center Theme', 'manage_options', 'theme-panel', 'rtelc_theme_settings_page', 'dashicons-welcome-learn-more', 1);
+  }
+
+  add_action('admin_menu', 'add_theme_menu_item');
+
+
+
   /* ======================================
 
     Breadcrumb Coding for Website
@@ -520,12 +577,19 @@
       } elseif ( is_404() ) {
         echo $currentBefore . 'Error 404' . $currentAfter;
       }
-
-      if ( get_query_var('paged') ) {
-        if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-        echo __('Page') . ' ' . get_query_var('paged');
-        if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+      if (!is_front_page() && is_home()) {
+        $pageNumber = get_query_var('paged');
+        if ($pageNumber == 0){
+          $pageNumber = 1;
+        }
+        echo "News - Page $pageNumber";
       }
+
+      // if ( get_query_var('paged') ) {
+      //   if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
+      //   echo __('News - Page ') . ' ' . get_query_var('paged');
+      //   if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+      // }
 
       echo '</div>';
 
