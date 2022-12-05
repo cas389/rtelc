@@ -395,6 +395,7 @@ ul.social-icon {
 /* Arrow Span Class */
 .button-arrow {
   color: var(--orange);
+  margin-right: 25px;
 }
 /* CSS For Button Sliding Animation */
 .btn-slide {
@@ -922,8 +923,12 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   }
   /* Adds Font Awesome Arrow to Programs Section and then Gets Rid of it for Submenu Items */
   .has-arrow a::before {
-    content: "\f107  ";
+    content: "\f054";
     font-family: "Font Awesome 6 Free";
+    display: inline-block;
+    margin-right: 5px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
   }
   .sub-menu a::before {
     content: " ";

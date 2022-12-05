@@ -50,7 +50,6 @@
 
 
   <section class="instagram-feed-home">
-    <h2 class="text-center">Our Gallery</h2>
     <?php
       dynamic_sidebar('instagram-feed');
     ?>

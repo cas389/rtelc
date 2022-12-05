@@ -436,7 +436,7 @@
   function rtelc_theme_settings_page(){ ?>
     <div class="wrap">
       <h1>Rose Tree Early Learning Center Theme</h1>
-      <p>Here you can set up your Facebook, Instagram, and Google Analytics accounts!</p>
+      <p>Here you can set up your Google Analytics account, address, phone number and more!</p>
       <p>More settings coming soon</p>
 
       <form method="post" action="options.php">
@@ -448,30 +448,46 @@
       </form>
   <? }
 
-  function display_instagram_element(){ ?>
-    <input type="text" name="instagram_url" id="instagram_url" value="<?php echo get_option('instagram_url'); ?>" /><?php
-  }
-
-  function display_facebook_element(){ ?>
-    <input type="text" name="facebook_url" id="facebook_url" value="<?php echo get_option('facebook_url'); ?>" /><?php
-  }
-
   function display_google_analytics_element(){ ?>
     <input type="text" name="google_analytics_code" id="google_analytics_code" value="<?php echo get_option('google_analytics_code'); ?>" /><?php
   }
 
+  function display_company_name(){ ?>
+    <input type="text" name="company_name" id="company_name" value="<?php echo get_option('company_name'); ?>" /><?php
+  }
+
+  function display_address(){ ?>
+    <input type="text" name="company_address" id="company_address" value="<?php echo get_option('company_address'); ?>" /><?php
+  }
+
+  function display_city_zip(){ ?>
+    <input type="text" name="company_city_zip" id="company_city_zip" value="<?php echo get_option('company_city_zip'); ?>" /><?php
+  }
+
+  function display_phone_number(){ ?>
+    <input type="text" name="company_number" id="company_number" value="<?php echo get_option('company_number'); ?>" /><?php
+  }
+
+
+
   function display_theme_panel_fields(){
     add_settings_section('rtelc-section', "All settings", null, 'rtelc-options');
 
-    add_settings_field('instagram_url', 'Instagram Profile URL', 'display_instagram_element', 'rtelc-options', 'rtelc-section');
-
-    add_settings_field('facebook_url', 'Facebook Profile URL', 'display_facebook_element', 'rtelc-options', 'rtelc-section');
-
     add_settings_field('google_analytics_code', 'Google Analytics Tracking ID (example UA-1234567-1)', 'display_google_analytics_element', 'rtelc-options', 'rtelc-section');
 
-    register_setting('rtelc-section', 'instagram_url');
-    register_setting('rtelc-section', 'facebook_url');
+    add_settings_field('company_name', 'Company Name', 'display_company_name', 'rtelc-options', 'rtelc-section');
+
+    add_settings_field('company_address', 'Company Address', 'display_address', 'rtelc-options', 'rtelc-section');
+
+    add_settings_field('company_city_zip', 'Company City, State, Zip', 'display_city_zip', 'rtelc-options', 'rtelc-section');
+
+    add_settings_field('company_number', 'Company Phone Number', 'display_phone_number', 'rtelc-options', 'rtelc-section');
+
     register_setting('rtelc-section', 'google_analytics_code');
+    register_setting('rtelc-section', 'company_name');
+    register_setting('rtelc-section', 'company_address');
+    register_setting('rtelc-section', 'company_city_zip');
+    register_setting('rtelc-section', 'company_number');
   }
 
   add_action('admin_init', 'display_theme_panel_fields');
@@ -482,7 +498,28 @@
 
   add_action('admin_menu', 'add_theme_menu_item');
 
+  /* ======================================
 
+    Google Analytics
+
+  ====================================== */
+  function themeGoogleAnalyitcs() {
+    $googleAnalytics = get_option('google_analytics_code');
+
+    ?>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $googleAnalytics; ?>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '<?php echo $googleAnalytics; ?>');
+    </script>
+
+  <?php }
+  add_action('wp_head', 'themeGoogleAnalyitcs');
 
   /* ======================================
 

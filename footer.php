@@ -47,6 +47,35 @@
 
         <div class="col-md-3 right-footer">
           <?php
+            $companyName = get_option('company_name');
+
+            if(!empty($companyName)){
+             echo $companyName;
+            } ?>
+
+          <?php
+            $companyAddress = get_option('company_address');
+
+            if(!empty($companyAddress)){
+             echo "<br />" .  $companyAddress;
+            } ?>
+
+          <?php
+            $companyCityStateZip = get_option('company_city_zip');
+
+            if(!empty($companyCityStateZip)){
+             echo "<br />" .  $companyCityStateZip;
+            } ?>
+
+          <?php
+            $companyNumber = get_option('company_number');
+
+            if(!empty($companyNumber)){
+             echo "<br />" .  $companyNumber;
+            } ?>
+
+
+          <?php
             dynamic_sidebar('right-footer');
           ?>
         </div>
