@@ -21,10 +21,19 @@
                 <p><a class="read-more-link" href="<?php the_permalink(); ?>">Read More...</a></p>
               </div>
             <?php
-            } //End of while loop
-          } // End of If Statment ?>
+          } //End of while loop ?>
         <!-- Add Pagination to Blog Index Page -->
         <p class="pagination-para"><?php pagination_for_site(); ?></p>
+        <?php }else { ?>
+        <div class="col-lg-12">
+          <?php
+            echo "<p>We're sorry, the term you are looking for was not found in our website. Please try another search.</p>";
+
+            get_search_form(); // Build in WordPress function. Retrieves search functionality
+          ?>
+        </div>
+      <?php
+    } // End of else loop?>
       </section>
     </section>
   </main><!-- End of row Main -->

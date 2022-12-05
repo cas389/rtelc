@@ -455,6 +455,11 @@ ul.social-icon {
   background-color: var(--green) !important;
   color: white !important;
 }
+/* Gives list bullet points when used for latest post in widget */
+.wp-block-latest-posts.wp-block-latest-posts__list {
+  list-style: circle;
+  padding-left: 15px;
+}
 
 /*==================================
 
@@ -526,7 +531,6 @@ ul.social-icon {
 .orange-bottom-border {
   border-bottom: 3px solid var(--orange);
 }
-
 /*==================================
 
   Blog Main Post Page
@@ -565,6 +569,11 @@ ul.social-icon {
 }
 .pagination-para a:hover {
   color: var(--orange);
+}
+/* Changes hover color on blog titles since they are links */
+.blog-post h5 a:hover {
+  color: var(--green);
+  text-decoration: underline;
 }
 
 /*==================================
@@ -932,6 +941,7 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   }
   .sub-menu a::before {
     content: " ";
+    margin-right: 0px;
   }
 
   /*==================================
