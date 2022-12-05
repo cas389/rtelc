@@ -509,6 +509,7 @@ ul.social-icon {
 .main-section li::before {
   content: "\f054";
   font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   padding-right: 10px;
   font-size: .75rem;
   margin-left: -15px;
@@ -938,6 +939,7 @@ Responsive Web Coding - 1366px by 768px (Laptop)
     margin-right: 5px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+    font-weight: 900;
   }
   .sub-menu a::before {
     content: " ";

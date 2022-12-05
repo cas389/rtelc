@@ -16,6 +16,7 @@
 
     // JavaScript File
     wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js');
+
   }
 
   add_action('wp_enqueue_scripts', 'custom_theme_scripts');

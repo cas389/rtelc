@@ -7,7 +7,6 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/adac9de0ff.js" crossorigin="anonymous"></script>
 
-
     <title><?php bloginfo('name'); ?></title>
 
     <?php wp_head(); ?>
