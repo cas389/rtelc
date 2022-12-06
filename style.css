@@ -612,7 +612,68 @@ color: black;
 .small-preview-blog-text p {
   text-align: left;
 }
+/* Stylizes Comment Section as a Whole */
+.comment-section {
+  border-top: 3px solid var(--green);
+  padding-top: 10px;
+  margin-top: 3rem;
+}
+#comment,
+#author,
+#email,
+#url {
+  border: 1px solid black;
+  background-color: #f1f1f1;
+  padding: 2px 7px;
+}
+#comment {
+  width: 18em;
+}
+.row.individual-comment {
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--green);
+  padding-bottom: 2rem;
+}
+.row.individual-comment:last-child {
+  border: 0;
+}
+/* Stylizes Submit Button */
+#submit {
+  background-color: var(--orange);
+  padding: .15rem .5rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 
+#submit:hover {
+  background-color: var(--green);
+}
+
+/* Stylizes comments that were Left by People */
+.comment-section-text {
+  border-bottom: 3px solid var(--green);
+  padding-top: 10px;
+  padding-bottom: 2rem;
+}
+.comment-section-text:last-child {
+  border-bottom: 0;
+}
+.comment-section-text {
+  margin-top: 3rem;
+}
+.comment-author-date {
+  padding-top: 4rem;
+}
+/* Stylizes Photo of Commenter Image */
+.comment-avatar-photo img {
+  margin: 1.7rem 1rem 1rem 0;
+  float: left;
+  width: 125px;
+  height: 125px;
+}
 /*==================================
 
   404 Page
@@ -933,7 +994,7 @@ Responsive Web Coding - 1366px by 768px (Laptop)
   }
   /* Adds Font Awesome Arrow to Programs Section and then Gets Rid of it for Submenu Items */
   .has-arrow a::before {
-    content: "\f054";
+    content: "\f107";
     font-family: "Font Awesome 6 Free";
     display: inline-block;
     margin-right: 5px;
@@ -991,13 +1052,15 @@ Responsive Web Coding - 1366px by 768px (Laptop)
     margin-top: 0;
     padding: 1.4rem 0 0 0;
   }
+  #comment {
+  width: 45em;
+}
   /*==================================
     404 Page
   =====================================*/
   .hero-404 {
     margin-top: -5rem;
   }
-
   /*==================================
     Contact Page
   =====================================*/

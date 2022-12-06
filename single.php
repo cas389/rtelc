@@ -41,6 +41,14 @@
             }
           }
         ?>
+
+        <section class="comment-section">
+          <?php // Comment Form
+            comment_form();
+
+            // Comments Template
+            comments_template(); ?>
+        </section>
       </section> <!-- Ends the col-md-9 Container -->
 
       <!-- Sidebar Container with Widget Section -->

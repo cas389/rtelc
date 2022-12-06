@@ -1,4 +1,13 @@
 <?php
+
+/* ======================================
+
+  Disallow File Edit in Dashboard for Security Purposes
+
+====================================== */
+
+   // define('DISALLOW_FILE_EDIT', true);
+
 /* ======================================
 
   Adding Stylsheets and JavaScripts Files
@@ -436,7 +445,7 @@
   ====================================== */
   function rtelc_theme_settings_page(){ ?>
     <div class="wrap">
-      <h1>Rose Tree Early Learning Center Theme</h1>
+      <h1>Theme Settings</h1>
       <p>Here you can set up your Google Analytics account, address, phone number and more!</p>
       <p>More settings coming soon</p>
 
@@ -494,7 +503,7 @@
   add_action('admin_init', 'display_theme_panel_fields');
 
   function add_theme_menu_item(){
-    add_menu_page('Rose Tree Early Learning Center Theme', 'Rose Tree Early Learning Center Theme', 'manage_options', 'theme-panel', 'rtelc_theme_settings_page', 'dashicons-welcome-learn-more', 1);
+    add_menu_page('Theme Settings', 'Theme Settings', 'manage_options', 'theme-panel', 'rtelc_theme_settings_page', 'dashicons-welcome-learn-more', 1);
   }
 
   add_action('admin_menu', 'add_theme_menu_item');
